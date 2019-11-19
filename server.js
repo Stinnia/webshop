@@ -30,7 +30,7 @@ app.post("/savephone", async (req, res) => {
     let title = req.body.title;
     let description = req.body.description;
     let price = req.body.price;
-    savePhoneDB(title, description, price, id)
+    savePhoneDB(title, description, price)
 
     res.json(
         {"successful": "You have successfully created a new product"}
@@ -45,11 +45,19 @@ async function savePhoneDB(title, description, price) {
         console.log(err)
     }
 }
-app.get("/deletePhones", async (req, res) => {
-    res.json(await getDataPhonesDB())
+app.post("/deletePhones", async (req, res) => {
+    let id = req.body.id;
+    deletePhoneDB(id);
+    
+
+    res.json(
+        {"deletePhoneResponse": `
+            Phone with ID ${id} deleted
+        `}
+    )
 });
 
-async function deleteDataPhonesDB(id) {
+async function deletePhoneDB(id) {
     try {
         const result = (await mssql.query `DELETE FROM dbo.webshop WHERE id = ${id};`).recordset
     } catch (err) {
