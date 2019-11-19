@@ -49,8 +49,9 @@ class PhoneHandler {
 
             
             for (let phones of data) {
+              let hr = document.createElement("hr");
               let btnDel = document.createElement("button");
-                  btnDel.innerHTML = "Delete phone with id: " + phones.id;
+                  btnDel.innerHTML = "Delete " + phones.title;
 
                  btnDel.addEventListener('click', () => {
                      this.deletePhone(phones.id)
@@ -59,19 +60,21 @@ class PhoneHandler {
               //content of output
               let element = Common.toDom(
               `
-              <div class="phoneContainer d-inline">
+              <div class="phoneContainer">
               <div class="title h2">${phones.title}</div>
               <div class="img">
                   <img src="https://via.placeholder.com/150">
               </div>
-              <div class="description">${phones.description}</div>
-              <div class="price">${phones.price} $</div>
+              <div class="description ">${phones.description}</div>
+              <div class="price h3">${phones.price} $</div>
+              <div></div>
               </div>
-              <br>
-              `)
-              this.result.appendChild(btnDel); //showing delete btn
+              ` 
+              )
               this.result.appendChild(element); //showing phones
-
+              this.result.appendChild(btnDel); //showing delete
+              this.result.appendChild(hr); //showing delete
+                
           }
       })
   } 

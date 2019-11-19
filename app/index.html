@@ -6,22 +6,27 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Phone products</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <center>
-
-        <input id="title" placeholder="Title" type="text">
-        <input id="description" placeholder="Description" type="text">
-        <input id="price" placeholder="Price" type="text">
-        <button id="btnSendPhonesToDB">Send note to DB</button>
-        <br>
+        <div class="container">
+<div class="mt-5">
+    <div class="h1">Create a new phone </div><form class="form-inline col-lg-9 col-offset-6 centered">
+        <input id="title" class="form-control m-1" placeholder="Phone title" type="text">
+        <input id="description" class="form-control m-1" placeholder="Description" type="text">
+        <input id="price" class="form-control m-1" placeholder="Price" type="text">
+        <button id="btnSendPhonesToDB" class="btn btn-info">Create new phone</button>
+    </form>
 
         <ul id="allPhonesFromDB">
 
         </ul>
 
         <div id="result"></div>
-
+  
+    </div>
+</div>
     </center>
     
     <script type="module" src="main.js"></script> 
