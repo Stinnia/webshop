@@ -1,0 +1,39 @@
+Import Export Class Constructor Method
+
+Modules are used for splitting the code for a more manageable structure. 
+The main javascript file will contain only the imports from the modules folder, where the javascript files lie, containing the different classes. 
+After each class there will be an export, sending the code away, where it will be picked up by the import on the main javascript file.
+
+There are different exports and imports:
+
+export function example(){	}
+
+this will have the following import:
+
+Import {example} from './modules';
+
+*Notice the curly brackets for the function.
+
+AND
+
+
+class Example() {	}
+
+export default Example;
+
+
+With the following import
+
+
+Import Example from './modules';
+
+*Notice that the class doesnt require curly brackets as the function.
+
+ 
+
+A class contains a constructor and methods. The methods can be written, but will not be run until they are called inside the constructor.
+
+For dummies: Imagine you want to make a cake. You have the ingredients, the instructions and yourself. The ingredients will not mix themselves. 
+The instructions will not follow themselves. You need to mix the ingredients following the instructions in order to make the cake.
+
+In this instance you are the constructor, and the ingredients and the instructions are the methods. 

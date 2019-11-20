@@ -30,17 +30,18 @@ app.post("/savephone", async (req, res) => {
     let title = req.body.title;
     let description = req.body.description;
     let price = req.body.price;
-    savePhoneDB(title, description, price)
+    let imageurl = req.body.imageurl;
+    savePhoneDB(title, description, price, imageurl)
 
     res.json(
         {"successful": "You have successfully created a new product"}
     )
 });
 
-async function savePhoneDB(title, description, price) {
+async function savePhoneDB(title, description, price, imageurl) {
     try {
-        const result = (await mssql.query `INSERT INTO dbo.webshop (title, description, price)
-        VALUES (${title}, ${description}, ${price});`).recordset
+        const result = (await mssql.query `INSERT INTO dbo.webshop (title, description, price, imageurl)
+        VALUES (${title}, ${description}, ${price}, ${imageurl});`).recordset
     } catch (err) {
         console.log(err)
     }

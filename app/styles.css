@@ -1,5 +1,18 @@
 .phoneContainer {
-    display: block;
+    display: inline-block!important;
     padding: 20px;
-    margin: 50px 200px 10px 200px;
+    margin-top: 20px;
+}
+.img {
+    height: 100px;
+}
+.btn-danger {
+    width: 200px;
+    vertical-align:90px;
+	transform:rotate(7deg);
+  -ms-transform:rotate(90deg); /* IE 9 */
+  -moz-transform:rotate(90deg); /* Firefox */
+  -webkit-transform:rotate(90deg); /* Safari and Chrome */
+  -o-transform:rotate(90deg);
+  margin-left: -80px; 
 }

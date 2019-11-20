@@ -12,18 +12,20 @@
     <center>
         <div class="container">
 <div class="mt-5">
-    <div class="h1">Create a new phone </div><form class="form-inline col-lg-9 col-offset-6 centered">
+    <div class="h1">Create a new phone </div><form class="form-inline col-lg-5 col-offset-4 centered">
         <input id="title" class="form-control m-1" placeholder="Phone title" type="text">
         <input id="description" class="form-control m-1" placeholder="Description" type="text">
         <input id="price" class="form-control m-1" placeholder="Price" type="text">
-        <button id="btnSendPhonesToDB" class="btn btn-info">Create new phone</button>
+        <input id="imageurl" class="form-control m-1" placeholder="Image URL" type="text">
+        <br>
+        <button id="btnSendPhonesToDB" class="btn btn-info btn-block">Create new phone</button>
     </form>
 
         <ul id="allPhonesFromDB">
 
         </ul>
 
-        <div id="result"></div>
+        <div id="result" class="m-5"></div>
   
     </div>
 </div>

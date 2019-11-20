@@ -15,6 +15,7 @@ class PhoneHandler {
             let title = document.querySelector("#title").value;
             let description = document.querySelector("#description").value;
             let price = document.querySelector("#price").value;
+            let imageurl = document.querySelector("#imageurl").value;
 
 
             fetch('/savephone', {
@@ -26,7 +27,8 @@ class PhoneHandler {
                 body: JSON.stringify({
                     title,
                     description,
-                    price
+                    price,
+                    imageurl
                     
                 })
             })
@@ -51,6 +53,7 @@ class PhoneHandler {
             for (let phones of data) {
               let hr = document.createElement("hr");
               let btnDel = document.createElement("button");
+              btnDel.className = "btn btn-danger";
                   btnDel.innerHTML = "Delete " + phones.title;
 
                  btnDel.addEventListener('click', () => {
@@ -60,20 +63,19 @@ class PhoneHandler {
               //content of output
               let element = Common.toDom(
               `
-              <div class="phoneContainer">
+              <div class="phoneContainer border d-inline">
               <div class="title h2">${phones.title}</div>
               <div class="img">
-                  <img src="https://via.placeholder.com/150">
+                  <img class="img" src="${phones.imageurl}">
               </div>
               <div class="description ">${phones.description}</div>
               <div class="price h3">${phones.price} $</div>
-              <div></div>
+              <div></div></div>
               </div>
               ` 
               )
               this.result.appendChild(element); //showing phones
               this.result.appendChild(btnDel); //showing delete
-              this.result.appendChild(hr); //showing delete
                 
           }
       })
